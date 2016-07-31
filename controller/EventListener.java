@@ -1,6 +1,6 @@
 package Sokoban.controller;
 
-import com.javarush.test.level34.lesson15.big01.model.Direction;
+import Sokoban.model.Direction;
 
 /**
  * Created by ruslan on 31.07.16.

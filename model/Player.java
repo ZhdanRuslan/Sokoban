@@ -1,8 +1,5 @@
 package Sokoban.model;
 
-import com.javarush.test.level34.lesson15.big01.model.CollisionObject;
-import com.javarush.test.level34.lesson15.big01.model.Movable;
-
 import java.awt.*;
 
 /**

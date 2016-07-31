@@ -1,9 +1,6 @@
 package Sokoban.model;
 
-import com.javarush.test.level34.lesson15.big01.controller.EventListener;
-import com.javarush.test.level34.lesson15.big01.model.Box;
-import com.javarush.test.level34.lesson15.big01.model.Home;
-import com.javarush.test.level34.lesson15.big01.model.Wall;
+import Sokoban.controller.EventListener;
 
 import java.nio.file.Paths;
 
@@ -16,7 +13,7 @@ public class Model
     private EventListener eventListener;
     private GameObjects gameObjects;
     private int currentLevel = 1;
-    private LevelLoader levelLoader = new LevelLoader(Paths.get("/home/ruslan/Документы/JavaRushHomeWork/src/com/javarush/test/level34/lesson15/big01/res/levels.txt"));
+    private LevelLoader levelLoader = new LevelLoader(Paths.get("../res/levels.txt"));
 
     public void setEventListener(EventListener eventListener)
     {
@@ -97,7 +94,7 @@ public class Model
         GameObject stoped = null;
         for (GameObject gameObject : gameObjects.getAll())
         {
-            if (!(gameObject instanceof Player) && !(gameObject instanceof com.javarush.test.level34.lesson15.big01.model.Home) && player.isCollision(gameObject, direction))
+            if (!(gameObject instanceof Player) && !(gameObject instanceof Home) && player.isCollision(gameObject, direction))
             {
                 stoped = gameObject;
             }
@@ -107,14 +104,14 @@ public class Model
         {
             return false;
         }
-        if (stoped instanceof com.javarush.test.level34.lesson15.big01.model.Box)
+        if (stoped instanceof Box)
         {
-            com.javarush.test.level34.lesson15.big01.model.Box stopedBox = (com.javarush.test.level34.lesson15.big01.model.Box) stoped;
+            Box stopedBox = (Box) stoped;
             if (checkWallCollision(stopedBox, direction))
             {
                 return true;
             }
-            for (com.javarush.test.level34.lesson15.big01.model.Box box : gameObjects.getBoxes())
+            for (Box box : gameObjects.getBoxes())
             {
                 if (stopedBox.isCollision(box, direction))
                 {

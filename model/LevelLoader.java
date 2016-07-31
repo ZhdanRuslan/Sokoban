@@ -1,11 +1,5 @@
 package Sokoban.model;
 
-import com.javarush.test.level34.lesson15.big01.model.Box;
-import com.javarush.test.level34.lesson15.big01.model.GameObjects;
-import com.javarush.test.level34.lesson15.big01.model.Home;
-import com.javarush.test.level34.lesson15.big01.model.Model;
-import com.javarush.test.level34.lesson15.big01.model.Player;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -25,17 +19,17 @@ public class LevelLoader
         this.levels = levels;
     }
 
-    public com.javarush.test.level34.lesson15.big01.model.GameObjects getLevel(int level)
+    public GameObjects getLevel(int level)
     {
         while (level > 60)
         {
             level = level - 60;
         }
 
-        Set<com.javarush.test.level34.lesson15.big01.model.Wall> walls = new HashSet<>();
-        Set<com.javarush.test.level34.lesson15.big01.model.Box> boxes = new HashSet<>();
-        Set<com.javarush.test.level34.lesson15.big01.model.Home> homes = new HashSet<>();
-        com.javarush.test.level34.lesson15.big01.model.Player player = null;
+        Set<Wall> walls = new HashSet<>();
+        Set<Box> boxes = new HashSet<>();
+        Set<Home> homes = new HashSet<>();
+        Player player = null;
 
         try
         {
@@ -78,20 +72,20 @@ public class LevelLoader
                         case ' ':
                             break;
                         case 'X':
-                            walls.add(new com.javarush.test.level34.lesson15.big01.model.Wall(x * com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE + com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE / 2, y * com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE + com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE / 2));
+                            walls.add(new Wall(x * Model.FIELD_SELL_SIZE + Model.FIELD_SELL_SIZE / 2, y * Model.FIELD_SELL_SIZE + Model.FIELD_SELL_SIZE / 2));
                             break;
                         case '*':
-                            boxes.add(new com.javarush.test.level34.lesson15.big01.model.Box(x * com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE + com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE / 2, y * com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE + com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE / 2));
+                            boxes.add(new Box(x * Model.FIELD_SELL_SIZE + Model.FIELD_SELL_SIZE / 2, y * Model.FIELD_SELL_SIZE + Model.FIELD_SELL_SIZE / 2));
                             break;
                         case '.':
-                            homes.add(new com.javarush.test.level34.lesson15.big01.model.Home(x * com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE + com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE / 2, y * com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE + com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE / 2));
+                            homes.add(new Home(x * Model.FIELD_SELL_SIZE + Model.FIELD_SELL_SIZE / 2, y * Model.FIELD_SELL_SIZE + Model.FIELD_SELL_SIZE / 2));
                             break;
                         case '&':
-                            boxes.add(new Box(x * com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE + com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE / 2, y * com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE + com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE / 2));
-                            homes.add(new Home(x * com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE + com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE / 2, y * com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE + com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE / 2));
+                            boxes.add(new Box(x * Model.FIELD_SELL_SIZE + Model.FIELD_SELL_SIZE / 2, y * Model.FIELD_SELL_SIZE + Model.FIELD_SELL_SIZE / 2));
+                            homes.add(new Home(x * Model.FIELD_SELL_SIZE + Model.FIELD_SELL_SIZE / 2, y * Model.FIELD_SELL_SIZE + Model.FIELD_SELL_SIZE / 2));
                             break;
                         case '@':
-                            player = new Player(x * com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE + com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE / 2, y * com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE + Model.FIELD_SELL_SIZE / 2);
+                            player = new Player(x * Model.FIELD_SELL_SIZE + Model.FIELD_SELL_SIZE / 2, y * Model.FIELD_SELL_SIZE + Model.FIELD_SELL_SIZE / 2);
                             break;
                     }
 

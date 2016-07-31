@@ -1,10 +1,5 @@
 package Sokoban.model;
 
-import com.javarush.test.level34.lesson15.big01.model.Box;
-import com.javarush.test.level34.lesson15.big01.model.GameObject;
-import com.javarush.test.level34.lesson15.big01.model.Home;
-import com.javarush.test.level34.lesson15.big01.model.Player;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,12 +8,12 @@ import java.util.Set;
  */
 public class GameObjects
 {
-    private Set<com.javarush.test.level34.lesson15.big01.model.Wall> walls;
-    private Set<com.javarush.test.level34.lesson15.big01.model.Box> boxes;
-    private Set<com.javarush.test.level34.lesson15.big01.model.Home> homes;
-    private com.javarush.test.level34.lesson15.big01.model.Player player;
+    private Set<Wall> walls;
+    private Set<Box> boxes;
+    private Set<Home> homes;
+    private Player player;
 
-    public GameObjects(Set<com.javarush.test.level34.lesson15.big01.model.Wall> walls, Set<com.javarush.test.level34.lesson15.big01.model.Box> boxes, Set<com.javarush.test.level34.lesson15.big01.model.Home> homes, com.javarush.test.level34.lesson15.big01.model.Player player)
+    public GameObjects(Set<Wall> walls, Set<Box> boxes, Set<Home> homes, Player player)
     {
         this.walls = walls;
         this.boxes = boxes;
@@ -26,7 +21,7 @@ public class GameObjects
         this.player = player;
     }
 
-    public Set<com.javarush.test.level34.lesson15.big01.model.Wall> getWalls()
+    public Set<Wall> getWalls()
     {
         return walls;
     }
@@ -46,7 +41,7 @@ public class GameObjects
         return player;
     }
 
-    public Set<com.javarush.test.level34.lesson15.big01.model.GameObject> getAll(){
+    public Set<GameObject> getAll(){
         Set<GameObject> resultSet = new HashSet<>();
         resultSet.addAll(getWalls());
         resultSet.addAll(getBoxes());

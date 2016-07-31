@@ -1,7 +1,5 @@
 package Sokoban.model;
 
-import com.javarush.test.level34.lesson15.big01.model.GameObject;
-
 import java.awt.*;
 
 /**

@@ -2,6 +2,8 @@ package Sokoban.model;
 
 import java.awt.*;
 
+import static Sokoban.model.Model.FIELD_SELL_SIZE;
+
 /**
  * Created by ruslan on 31.07.16.
  */
@@ -16,8 +18,8 @@ public abstract class GameObject
     {
         this.x = x;
         this.y = y;
-        this.width = com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE;
-        this.height = com.javarush.test.level34.lesson15.big01.model.Model.FIELD_SELL_SIZE;
+        this.width = FIELD_SELL_SIZE;
+        this.height = FIELD_SELL_SIZE;
 
     }
 

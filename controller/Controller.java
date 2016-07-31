@@ -1,10 +1,10 @@
 package Sokoban.controller;
 
-import com.javarush.test.level34.lesson15.big01.controller.EventListener;
-import com.javarush.test.level34.lesson15.big01.model.Direction;
-import com.javarush.test.level34.lesson15.big01.model.GameObjects;
-import com.javarush.test.level34.lesson15.big01.model.Model;
-import com.javarush.test.level34.lesson15.big01.view.View;
+import Sokoban.model.Direction;
+import Sokoban.model.GameObjects;
+import Sokoban.model.Model;
+import Sokoban.view.View;
+
 
 /**
  * Created by ruslan on 30.07.16.

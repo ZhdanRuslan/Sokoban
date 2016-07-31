@@ -1,7 +1,8 @@
 package Sokoban.view;
 
-import com.javarush.test.level34.lesson15.big01.controller.EventListener;
-import com.javarush.test.level34.lesson15.big01.model.*;
+import Sokoban.controller.EventListener;
+import Sokoban.model.Direction;
+import Sokoban.model.GameObject;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,10 +15,10 @@ import java.util.Set;
  */
 public class Field extends JPanel
 {
-    private com.javarush.test.level34.lesson15.big01.view.View view;
+    private View view;
     private EventListener eventListener;
 
-    public Field(com.javarush.test.level34.lesson15.big01.view.View view)
+    public Field(View view)
     {
         this.view = view;
         this.addKeyListener(new KeyHandler());

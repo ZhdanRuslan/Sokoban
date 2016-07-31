@@ -1,9 +1,8 @@
 package Sokoban.view;
 
-import com.javarush.test.level34.lesson15.big01.controller.Controller;
-import com.javarush.test.level34.lesson15.big01.controller.EventListener;
-import com.javarush.test.level34.lesson15.big01.model.GameObjects;
-import com.javarush.test.level34.lesson15.big01.view.Field;
+import Sokoban.controller.Controller;
+import Sokoban.controller.EventListener;
+import Sokoban.model.GameObjects;
 
 import javax.swing.*;
 
